@@ -1,5 +1,243 @@
 <html>
   <body>
-    <a href
+    <code>
+      CHT
+syms A s
+A=[7 2 -2; -6 -1 2; 6 2 -1];
+I=[1 0 0; 0 1 0; 0 0 1];
+charpoly(A,s)==0
+verification=A^3-5*A^2+7*A-3*I
+format rational
+inv_A=(1/3)*(A^2-5*A+7*I)
+A_power4=5*A^3-7*A^2+3*A
+______________________________________________________________________________
+syms A s
+A=[2 1 1; 0 1 0; 1 1 2];
+I=[1 0 0; 0 1 0; 0 0 1];
+charpoly(A,s)==0
+verification=A^3-5*A^2+7*A-3*I
+format rational
+inv_A=(1/3)*(A^2-5*A+7*I)
+A_power4=5*A^3-7*A^2+3*A
+______________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+syms A s
+A=[-2 2 -3; 2 1 -6; -1 -2 0];
+I=[1 0 0; 0 1 0; 0 0 1];
+charpoly(A,s)==0
+verification=A^3+A^2-21*A-45*I
+format rational
+inv_A=(1/45)*(A^2+A-21*I)
+A_power4=-A^3+21*A^2+45*A
+______________________________________________________________________________
+
+
+syms s
+A=[1 1 3; 1 3 -3; 2 -4 -4];
+I=[1 0 0; 0 1 0; 0 0 1];
+charpoly(A,s)==0
+verification=A^3-32*A+56*I
+format rational
+inv_A=(1/56)*(-A^2+32*I)
+A_power4=32*A^2-56*A
+
+
+
+
+
+
+
+DOM
+syms s
+A =[1 1 3;1 5 1;3 1 1]
+charpoly(A,s)==0
+eig_A = eig(A)
+[N D]= eig (A);
+M(: ,1)=N(: ,1)* sqrt (2) ;
+M(: ,2)=N(: ,2)* sqrt (3) ;
+M(: ,3)=N(: ,3)* sqrt (6) 
+[N D]= eig (A)
+_______________________________________________________________________________
+syms s
+A =[2 1 -1; 1 1 -2; -1 -2 1]
+charpoly(A,s)==0
+eig_A = eig(A)
+[N , ~]= eig (A);
+M(: ,1)=N(: ,1)* sqrt (2) ;
+M(: ,2)=N(: ,2)* sqrt (6) ;
+M(: ,3)=N(: ,3)* sqrt (3)
+[N, D]= eig (A)
+__________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+syms s
+A =[3 -1 1; -1 5 -1; 1 -1 3]
+charpoly(A,s)==0
+eig_A = eig(A)
+[N D]= eig (A);
+M(: ,1)=N(: ,1)* sqrt (2) ;
+M(: ,2)=N(: ,2)* sqrt (3) ;
+M(: ,3)=N(: ,3)* sqrt (6)
+[N, D]= eig (A)
+________________________________________________________________________________
+syms s
+A =[2 0 4; 0 6 0; 4 0 2]
+charpoly(A,s)==0
+eig_A = eig(A)
+[N D]= eig (A);
+M(: ,1)=N(: ,1)* sqrt (2) ;
+M(: ,2)=N(: ,2)* sqrt (2) ;
+M(: ,3)=N(: ,3)
+[N D]= eig (A)
+__________________________________________________________________________________
+
+
+
+
+
+
+LI-LD
+A=[1 2 1; 2 1 1; 1 0 2]
+det_A = det(A)
+if det(A)==0
+ disp('The given vectors are dependent')
+else
+ disp('The given vectors are independent')
+end
+
+A=[1 -2 4; 4 1 11; 2 3 5]
+det_A = det(A)
+if det(A)==0
+ disp('The given vectors are dependent')
+else
+ disp('The given vectors are independent')
+end
+_____________________________________________________________________________-
+
+
+
+
+
+
+
+
+
+
+
+
+
+A=[1 2 2 -1; -2 -1 1 -1; -1 1 -1 2; 0 0 1 -1]
+det_A = det(A)
+if det(A)==0
+ disp('The given vectors are dependent')
+else
+ disp('The given vectors are independent')
+end
+_________________________________________________________________________________
+A=[1 2 1 2; 1 -1 -1 1; 2 -5 -4 1; 4 2 0 6]
+det_A = det(A)
+if det(A)==0
+ disp('The given vectors are dependent')
+else
+ disp('The given vectors are independent')
+end
+
+
+
+
+
+
+
+
+
+RT
+@syms x
+f(x)=(x-1)^2 *(x-3)
+I=[1,3];
+a=I(1);
+b=I(2);
+df=diff(f,x,1);
+f_a=f(a)
+f_b=f(b)
+c=solve(df==0);
+c=c(a<c & c<b);
+disp(c)
+_____________________________________________________________________________
+
+syms x
+f(x)=(x+2)^3*(x-3)^4
+I=[-2,3];
+a=I(1);
+b=I(2);
+df=diff(f,x,1);
+f_a=f(a)
+f_b=f(b)
+c=solve(df==0);
+c=c(a<c & c<b);
+disp(c)
+
+
+
+MVT
+_________________________________________________________________________________
+syms x
+f(x)=x+exp(x)
+I=[0,1];
+a=I(1);
+b=I(2);
+df=diff(f,x,1);
+m=(f(b)-f(a))/(b-a);
+c=solve(df==m,x);
+c=c(a<c & c<b);
+disp(c)
+_________________________________________________________________________________
+syms x
+f(x)=x*(x-1)*(x-2)
+I=[0,0.5];
+a=I(1);
+b=I(2);
+df=diff(f,x,1);
+m=(f(b)-f(a))/(b-a);
+c=solve(df==m,x);
+c=c(a<c & c<b);
+disp(c)
+____________________________________________________________________________
+
+
+
+
+
+
+syms x
+f(x)=(x+2)^3*(x-3)^4
+I=[-2,3];
+a=I(1);
+b=I(2);
+df=diff(f,x,1);
+m=(f(b)-f(a))/(b-a);
+c=solve(df==m,x);
+c=c(a<c & c<b);
+disp(c)
+
+
+
+    </code>
   <body>
 </html>
