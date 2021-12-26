@@ -1,7 +1,7 @@
 <html>
   <body>
     <code>
-      CHT
+    <br>  CHT
 syms A s<br>
 A=[7 2 -2; -6 -1 2; 6 2 -1];<br>
 I=[1 0 0; 0 1 0; 0 0 1];<br>
@@ -32,199 +32,158 @@ A_power4=-A^3+21*A^2+45*A<br>
 ______________________________________________________________________________<br>
 
 
-syms s
-A=[1 1 3; 1 3 -3; 2 -4 -4];
-I=[1 0 0; 0 1 0; 0 0 1];
-charpoly(A,s)==0
-verification=A^3-32*A+56*I
-format rational
-inv_A=(1/56)*(-A^2+32*I)
-A_power4=32*A^2-56*A
+syms s<br>
+A=[1 1 3; 1 3 -3; 2 -4 -4];<br>
+I=[1 0 0; 0 1 0; 0 0 1];<br>
+charpoly(A,s)==0<br>
+verification=A^3-32*A+56*I<br>
+format rational<br>
+inv_A=(1/56)*(-A^2+32*I)<br>
+A_power4=32*A^2-56*A<br>
+_____________________________________________________________<br>
+DOM<br>
+syms s<br>
+A =[1 1 3;1 5 1;3 1 1]<br>
+charpoly(A,s)==0<br>
+eig_A = eig(A)<br>
+[N D]= eig (A);<br>
+M(: ,1)=N(: ,1)* sqrt (2) ;<br>
+M(: ,2)=N(: ,2)* sqrt (3) ;<br>
+M(: ,3)=N(: ,3)* sqrt (6) <br>
+[N D]= eig (A)<br>
+_______________________________________________________________________________<br>
+syms s<br>
+A =[2 1 -1; 1 1 -2; -1 -2 1]<br>
+charpoly(A,s)==0<br>
+eig_A = eig(A)<br>
+[N , ~]= eig (A);<br>
+M(: ,1)=N(: ,1)* sqrt (2) ;<br>
+M(: ,2)=N(: ,2)* sqrt (6) ;<br>
+M(: ,3)=N(: ,3)* sqrt (3)<br>
+[N, D]= eig (A)<br>
+__________________________________________________________________________________<br>
+
+syms s<br>
+A =[3 -1 1; -1 5 -1; 1 -1 3]<br>
+charpoly(A,s)==0<br>
+eig_A = eig(A)<br>
+[N D]= eig (A);<br>
+M(: ,1)=N(: ,1)* sqrt (2) ;<br>
+M(: ,2)=N(: ,2)* sqrt (3) ;<br>
+M(: ,3)=N(: ,3)* sqrt (6)<br>
+[N, D]= eig (A)<br>
+________________________________________________________________________________<br>
+syms s<br>
+A =[2 0 4; 0 6 0; 4 0 2]<br>
+charpoly(A,s)==0<br>
+eig_A = eig(A)<br>
+[N D]= eig (A);<br>
+M(: ,1)=N(: ,1)* sqrt (2) ;<br>
+M(: ,2)=N(: ,2)* sqrt (2) ;<br>
+M(: ,3)=N(: ,3)<br>
+[N D]= eig (A)<br>
+__________________________________________________________________________________<br>
+
+LI-LD<br>
+A=[1 2 1; 2 1 1; 1 0 2]<br>
+det_A = det(A)<br>
+if det(A)==0<br>
+ disp('The given vectors are dependent')<br>
+else<br>
+ disp('The given vectors are independent')<br>
+end<br>
+<br><br>
+A=[1 -2 4; 4 1 11; 2 3 5]<br>
+det_A = det(A)<br>
+if det(A)==0<br>
+ disp('The given vectors are dependent')<br>
+else<br>
+ disp('The given vectors are independent')<br>
+end<br>
+_____________________________________________________________________________<br>
 
 
+A=[1 2 2 -1; -2 -1 1 -1; -1 1 -1 2; 0 0 1 -1]<br>
+det_A = det(A)<br>
+if det(A)==0<br>
+ disp('The given vectors are dependent')<br>
+else<br>
+ disp('The given vectors are independent')<br>
+end<br>
+_________________________________________________________________________________<br>
+A=[1 2 1 2; 1 -1 -1 1; 2 -5 -4 1; 4 2 0 6]<br>
+det_A = det(A)<br>
+if det(A)==0<br>
+ disp('The given vectors are dependent')<br>
+else<br>
+ disp('The given vectors are independent')<br>
+end<br>
+
+________________________________________________________________________________<br>
+
+RT<br>
+syms x<br>
+f(x)=(x-1)^2 *(x-3)<br>
+I=[1,3];<br>
+a=I(1);<br>
+b=I(2);<br>
+df=diff(f,x,1);<br>
+f_a=f(a)<br>
+f_b=f(b)<br>
+c=solve(df==0);<br>
+c=c(a<c & c<b);<br>
+disp(c)<br>
+_____________________________________________________________________________<br>
+
+syms x<br>
+f(x)=(x+2)^3*(x-3)^4<br>
+I=[-2,3];<br>
+a=I(1);<br>
+b=I(2);<br>
+df=diff(f,x,1);<br>
+f_a=f(a)<br>
+f_b=f(b)<br>
+c=solve(df==0);<br>
+c=c(a<c & c<b);<br>
+disp(c)<br>
+____________________________________________<br>
 
 
+MVT<br>
+_________________________________________________________________________________<br>
+syms x<br>
+f(x)=x+exp(x)<br>
+I=[0,1];<br>
+a=I(1);<br>
+b=I(2);<br>
+df=diff(f,x,1);<br>
+m=(f(b)-f(a))/(b-a);<br>
+c=solve(df==m,x);<br>
+c=c(a<c & c<b);<br>
+disp(c)<br>
+_________________________________________________________________________________<br>
+syms x<br>
+f(x)=x*(x-1)*(x-2)<br>
+I=[0,0.5];<br>
+a=I(1);<br>
+b=I(2);<br>
+df=diff(f,x,1);<br>
+m=(f(b)-f(a))/(b-a);<br>
+c=solve(df==m,x);<br>
+c=c(a<c & c<b);<br>
+disp(c)<br>
+____________________________________________________________________________<br>
 
-
-
-DOM
-syms s
-A =[1 1 3;1 5 1;3 1 1]
-charpoly(A,s)==0
-eig_A = eig(A)
-[N D]= eig (A);
-M(: ,1)=N(: ,1)* sqrt (2) ;
-M(: ,2)=N(: ,2)* sqrt (3) ;
-M(: ,3)=N(: ,3)* sqrt (6) 
-[N D]= eig (A)
-_______________________________________________________________________________
-syms s
-A =[2 1 -1; 1 1 -2; -1 -2 1]
-charpoly(A,s)==0
-eig_A = eig(A)
-[N , ~]= eig (A);
-M(: ,1)=N(: ,1)* sqrt (2) ;
-M(: ,2)=N(: ,2)* sqrt (6) ;
-M(: ,3)=N(: ,3)* sqrt (3)
-[N, D]= eig (A)
-__________________________________________________________________________________
-
-
-
-
-
-
-
-
-
-syms s
-A =[3 -1 1; -1 5 -1; 1 -1 3]
-charpoly(A,s)==0
-eig_A = eig(A)
-[N D]= eig (A);
-M(: ,1)=N(: ,1)* sqrt (2) ;
-M(: ,2)=N(: ,2)* sqrt (3) ;
-M(: ,3)=N(: ,3)* sqrt (6)
-[N, D]= eig (A)
-________________________________________________________________________________
-syms s
-A =[2 0 4; 0 6 0; 4 0 2]
-charpoly(A,s)==0
-eig_A = eig(A)
-[N D]= eig (A);
-M(: ,1)=N(: ,1)* sqrt (2) ;
-M(: ,2)=N(: ,2)* sqrt (2) ;
-M(: ,3)=N(: ,3)
-[N D]= eig (A)
-__________________________________________________________________________________
-
-
-
-
-
-
-LI-LD
-A=[1 2 1; 2 1 1; 1 0 2]
-det_A = det(A)
-if det(A)==0
- disp('The given vectors are dependent')
-else
- disp('The given vectors are independent')
-end
-
-A=[1 -2 4; 4 1 11; 2 3 5]
-det_A = det(A)
-if det(A)==0
- disp('The given vectors are dependent')
-else
- disp('The given vectors are independent')
-end
-_____________________________________________________________________________-
-
-
-
-
-
-
-
-
-
-
-
-
-
-A=[1 2 2 -1; -2 -1 1 -1; -1 1 -1 2; 0 0 1 -1]
-det_A = det(A)
-if det(A)==0
- disp('The given vectors are dependent')
-else
- disp('The given vectors are independent')
-end
-_________________________________________________________________________________
-A=[1 2 1 2; 1 -1 -1 1; 2 -5 -4 1; 4 2 0 6]
-det_A = det(A)
-if det(A)==0
- disp('The given vectors are dependent')
-else
- disp('The given vectors are independent')
-end
-
-
-
-
-
-
-
-
-
-RT
-@syms x
-f(x)=(x-1)^2 *(x-3)
-I=[1,3];
-a=I(1);
-b=I(2);
-df=diff(f,x,1);
-f_a=f(a)
-f_b=f(b)
-c=solve(df==0);
-c=c(a<c & c<b);
-disp(c)
-_____________________________________________________________________________
-
-syms x
-f(x)=(x+2)^3*(x-3)^4
-I=[-2,3];
-a=I(1);
-b=I(2);
-df=diff(f,x,1);
-f_a=f(a)
-f_b=f(b)
-c=solve(df==0);
-c=c(a<c & c<b);
-disp(c)
-
-
-
-MVT
-_________________________________________________________________________________
-syms x
-f(x)=x+exp(x)
-I=[0,1];
-a=I(1);
-b=I(2);
-df=diff(f,x,1);
-m=(f(b)-f(a))/(b-a);
-c=solve(df==m,x);
-c=c(a<c & c<b);
-disp(c)
-_________________________________________________________________________________
-syms x
-f(x)=x*(x-1)*(x-2)
-I=[0,0.5];
-a=I(1);
-b=I(2);
-df=diff(f,x,1);
-m=(f(b)-f(a))/(b-a);
-c=solve(df==m,x);
-c=c(a<c & c<b);
-disp(c)
-____________________________________________________________________________
-
-
-
-
-
-
-syms x
-f(x)=(x+2)^3*(x-3)^4
-I=[-2,3];
-a=I(1);
-b=I(2);
-df=diff(f,x,1);
-m=(f(b)-f(a))/(b-a);
-c=solve(df==m,x);
-c=c(a<c & c<b);
-disp(c)
+syms x<br>
+f(x)=(x+2)^3*(x-3)^4<br>
+I=[-2,3];<br>
+a=I(1);<br>
+b=I(2);<br>
+df=diff(f,x,1);<br>
+m=(f(b)-f(a))/(b-a);<br>
+c=solve(df==m,x);<br>
+c=c(a<c & c<b);<br>
+disp(c)<br>
 
 
 
